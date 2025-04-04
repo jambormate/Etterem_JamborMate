@@ -8,19 +8,20 @@ namespace Etterem
 {
 	internal abstract class Etel
 	{
-		private double caloriesPerDkg;
-		private double weight;
-		private string name;
+		protected double caloriesPerDkg;
+		protected double weight;
+		protected string name;
 
 		protected Etel(double caloriesPerDkg, double weight, string name)
 		{
 			this.caloriesPerDkg = caloriesPerDkg;
 			this.weight = weight;
 			this.name = name;
+			IsItDairyFree = false;
 		}
 
 		private bool isItDairyFree;
-		public bool IsItDairyFree { get => isItDairyFree; set => isItDairyFree = false; }
+		public bool IsItDairyFree { get => isItDairyFree; set => isItDairyFree = value; }
 
 		public abstract double CountCalories();
 	}
